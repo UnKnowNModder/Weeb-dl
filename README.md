@@ -1,9 +1,8 @@
-# Weeb Central API Scraper 📚
+# Weeb Central Scraper 📚
 
-A powerful, asynchronous-ready Python wrapper for scraping manga data from `weebcentral.com`. This library provides a clean, object-oriented interface to search for manga, retrieve metadata, and download chapters as either individual images or compiled PDFs.
+A powerful, Python wrapper for scraping manga data from `weebcentral.com`. This library provides a clean, object-oriented interface to search for manga, retrieve metadata, and download chapters as either individual images or compiled PDFs.
 
 ![Python Version](https://img.shields.io/badge/python-3.8+-blue.svg)
-![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)
 ![Status](https://img.shields.io/badge/status-active-success.svg)
 
 ## Key Features
@@ -16,7 +15,7 @@ A powerful, asynchronous-ready Python wrapper for scraping manga data from `weeb
     * Download chapters as neatly compiled PDF files.
     * Download chapters as raw image files organized in folders.
 * **Efficient & Resilient**: Built-in caching, request retries, and threading for fast and reliable performance.
-* **Type-Hinted & Easy to Use**: A clean, modern, and fully type-hinted codebase for a great developer experience.
+* **Type-Hinted & Easy to Use**: A clean, modern, and fully type-hinted codebase for deeper understanding
 
 ***
 
@@ -28,11 +27,11 @@ To install the library and its dependencies, run the following command:
 pip install requests beautifulsoup4 Pillow fpdf2 ua-generator
 ```
 
-You will also need the `enums.py` file in the same directory as your script to import the necessary filter criteria.
+You will also need the `enums.py` file in the same directory as weeb.py to import the necessary filter criteria.
 
 ***
 
-## 🚀 Quick Start
+## 📖 Documentation
 
 Here's a simple example to search for a manga and download the first five chapters as PDFs.
 
@@ -237,7 +236,7 @@ all_chapters = a_manga.get_chapters()
 # Filter for chapters 100 to 110
 chapters_100_to_110 = a_manga.filter_chapters(all_chapters, start=100, end=110)
 
-# Filter for all chapters in Season 2
+# Filter for all chapters in Season 2 (Hypothetical splitted ranges if season not available)
 season_2_chapters = a_manga.filter_chapters(all_chapters, season=2)
 ```
 
@@ -314,10 +313,10 @@ For all filtering and sorting operations, this library uses `Enum` classes for c
 * `OfficialTranslation`: (`ANY`, `YES`, `NO`).
 * `AnimeAdaptation`: (`ANY`, `YES`, `NO`).
 * `AdultContent`: (`ANY`, `YES`, `NO`).
-* `SeriesStatus`: (`ONGOING`, `COMPLETED`, `HIATUS`, `CANCELLED`).
-* `SeriesType`: (`MANGA`, `MANHWA`, `MANHUA`, `ONE_SHOT`, etc.).
+* `SeriesStatus`: (`ONGOING`, `COMPLETED`, `HIATUS`, `CANCELED`).
+* `SeriesType`: (`MANGA`, `MANHWA`, `MANHUA`, `OEL`).
 * `Genre`: A long list of all available genres (`ACTION`, `ADVENTURE`, `FANTASY`, etc.).
-* `HotSeries`: (`DAILY`, `WEEKLY`, `MONTHLY`, `ALL_TIME`).
+* `HotSeries`: (`WEEKLY`, `MONTHLY`, `ALL_TIME`).
 * `DownloadType`: (`PDF`, `IMAGE`).
 
 **Import Example:**
@@ -332,7 +331,7 @@ from enums import Sort, Order, Genre, SeriesStatus, DownloadType
 The library raises custom exceptions for common issues. It's best practice to wrap your calls in a `try...except` block to handle them gracefully.
 
 * `NetworkError`: Raised if there's a problem with the network connection, a timeout, or a server error (like HTTP 4xx or 5xx).
-* `ParsingError`: Raised if the HTML structure of the site changes and the scraper cannot find the expected data.
+* `ParsingError`: Raised if the HTML structure of the site changes and the scraper cannot find the expected data. (open issues to let me know)
 
 **Example:**
 ```python

@@ -3,6 +3,7 @@
 A powerful, Python wrapper for scraping manga data from `weebcentral.com`. This library provides a clean, object-oriented interface to search for manga, retrieve metadata, and download chapters as either individual images or compiled PDFs.
 
 ![Python Version](https://img.shields.io/badge/python-3.8+-blue.svg)
+![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)
 ![Status](https://img.shields.io/badge/status-active-success.svg)
 
 ## Key Features
